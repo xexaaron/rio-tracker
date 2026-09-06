@@ -122,6 +122,7 @@ app.get("/extract", async (req, res) => {
 
         console.log("Team:", team);
         team.name = getTeamNameFromUrl(url);
+        team.url = url;
         res.json(team);
 
     } catch (error) {

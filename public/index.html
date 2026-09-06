@@ -104,7 +104,7 @@
       position: relative;
 
       overflow: hidden;
-
+      cursor: pointer;
       min-height: 240px;
 
       padding: 26px;
@@ -471,8 +471,15 @@
 
     function createTeamCard(data) {
       const card = document.createElement("article");
+      const url = data.url;
+
+
+      card.onclick = () => {
+        window.open(url, "_blank");
+      };
 
       card.className = "team-card";
+
 
       const initials = data.name
         .replace(/\(.*?\)/g, "")
